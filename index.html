@@ -1,26 +1,55 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" href="/Styles/style.css">
-  <title>Mi PWA</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LibraryControl</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
-  <div class="navbar">
-    <a href="#">Home</a>
-    <div class="center">La lista de nombres</div>
-    <div>2024 Mi Aplicación</div>
-  </div>
+    <header>
+        <div class="container">
+            <div class="header-left">
+                <h1>Library Control</h1>
+            </div>
+            <nav class="header-center">
+                <ul>
+                    <li><a href="#conocenos">Conócenos</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <a href="#login">Login</a>
+            </div>
+        </div>
+    </header>
 
-  <ul>
-    <li>Ubaldo Luna Rodriguez</li>
-    <li>Carlos Guajardo</li>
-    <li>Ulises Velazquez</li>
-    <li>Ricardo Avila</li>
-  </ul>
+    <main>
+        <p>Contenido Dinamico</p>
+        <p>Desarrollada por:</p>
+        <ul>
+            <li>Ubaldo Luna Rodriguez</li>
+            <li>Carlos Guajardo</li>
+            <li>Ulises Velazquez</li>
+            <li>Ricardo Avila</li>
+        </ul>
+    </main>
 
-  <script src="app.js"></script>
+    <footer>
+        <p>® Library Control 2024</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+            .then(function(registration) {
+                console.log('Service Worker registrado con alcance:', registration.scope);
+            })
+            .catch(function(error) {
+                console.log('Fallo en el registro del Service Worker:', error);
+            });
+        }
+    </script>
 </body>
 </html>
