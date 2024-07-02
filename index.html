@@ -15,19 +15,6 @@
             <li>Ulises Velazquez</li>
             <li>Ricardo Avila</li>
         </ul>
-        <img src="logo.png" alt="Logo">
-        <script>
-            if ('serviceWorker' in navigator) {
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js')
-                    .then(registration => {
-                        console.log('Service Worker registrado con éxito:', registration);
-                    })
-                    .catch(error => {
-                        console.log('Error al registrar el Service Worker:', error);
-                    });
-                });
-            }
-        </script>
+        <script src="app.js"></script>
     </body>
 </html>
