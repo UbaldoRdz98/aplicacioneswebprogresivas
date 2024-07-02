@@ -1,4 +1,9 @@
-// Ejemplo de código JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('La página se ha cargado completamente.');
-});  
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js')
+    .then(function(registration) {
+        console.log('Service Worker registrado con alcance:', registration.scope);
+    })
+    .catch(function(error) {
+        console.log('Fallo en el registro del Service Worker:', error);
+    });
+}
